@@ -5,6 +5,7 @@ import Footer from '@/components/footer/Footer'
 import { ThemeProvider } from '@/context/ThemeContext'
 import AuthProvider from '@/components/AuthProvider/AuthProvider'
 import ReactGA from 'react-ga4'
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,11 +15,6 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
-  ReactGA.initialize('G-3EFY80S353');
-  useEffect(() => {
-    ReactGA.send({ hitType: "pageview", page: window.location.pathname });
-  }, []);
-
   return (
     <html lang="en">
       <body className={inter.className}>
@@ -32,6 +28,7 @@ export default function RootLayout({ children }) {
           </AuthProvider>
         </ThemeProvider>
       </body>
+      <GoogleAnalytics gaId="G-3EFY80S353" />
     </html>
   )
 }
