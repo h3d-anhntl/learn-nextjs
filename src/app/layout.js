@@ -4,7 +4,7 @@ import { Inter, Roboto, Poppins} from 'next/font/google'
 import Footer from '@/components/footer/Footer'
 import { ThemeProvider } from '@/context/ThemeContext'
 import AuthProvider from '@/components/AuthProvider/AuthProvider'
-import { GoogleAnalytics } from '@next/third-parties/google'
+import { GoogleTagManager } from '@next/third-parties/google'
 
 const inter = Inter({ subsets: ['latin'] })
 
