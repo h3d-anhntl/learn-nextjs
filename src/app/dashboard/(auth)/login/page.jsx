@@ -4,6 +4,7 @@ import styles from './page.module.css'
 import { signIn, useSession } from 'next-auth/react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import { sendGAEvent } from '@next/third-parties/google'
 
 const Login = () => {
   const session = useSession()
@@ -25,6 +26,11 @@ const Login = () => {
 
     signIn("credentials", {email, password})
   }
+
+  const handleLoginWithGoogle = async (e) => {
+    signIn("google");
+    sendGAEvent({ event: 'user_id', value: 'xyz' })
+  }
   return (
     <div className={styles.container}>
       <form className={styles.form} onSubmit={handleSubmit}>
@@ -33,7 +39,7 @@ const Login = () => {
         <button className={styles.button}>Login</button>
       </form>
 
-      {/* <Link href="/dashboard/login" onClick={signIn("google")} >Login with Google</Link> */}
+      <Link href="/dashboard/login" onClick={() => handleLoginWithGoogle()} >Login with Google</Link>
     </div>
   )
 }
