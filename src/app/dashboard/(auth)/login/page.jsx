@@ -4,7 +4,7 @@ import styles from './page.module.css'
 import { signIn, useSession } from 'next-auth/react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { sendGAEvent } from '@next/third-parties/google'
+import { sendGTMEvent } from '@next/third-parties/google'
 
 const Login = () => {
   const session = useSession()
