@@ -28,7 +28,7 @@ const Login = () => {
   }
 
   const handleLoginWithGoogle = async (e) => {
-    sendGTMEvent({ event: 'login', user_id: 'xyz' })
+    sendGTMEvent({ event: 'user_id', value: '123546879xyz' })
     signIn("google");
     
   }
