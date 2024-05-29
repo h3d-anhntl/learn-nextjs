@@ -34,7 +34,7 @@ const Login = () => {
   }
   return (
     <div className={styles.container}>
-      <form className={styles.form} onSubmit={handleSubmit}>
+      <form id="newsletter-form" className={styles.form} onSubmit={handleSubmit}>
         <input type="email" placeholder="email" className={styles.input} required></input>
         <input type="password" placeholder="password" className={styles.input} required></input>
         <button className={styles.button}>Login</button>
